@@ -8,4 +8,7 @@
   联系方式 <%= @job.contact_email %>
 </p>
 <br>
+<div class="text-center">
+  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+</div>
 <a><%= link_to("返回首页",root_path)%></a>
