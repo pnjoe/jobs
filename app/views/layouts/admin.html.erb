@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job Listing </title>
+        <title> 招聘网-管理员后台 </title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +14,10 @@
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-2" style="background-color: #006699; height: 1000px;">
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                  <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
+                  <li class="active"><%= link_to("后台首页", admin_jobs_path ) %></li>
+                    <li style="background-color: #004477"><%= link_to("新增职缺", new_admin_job_path ) %> </li>
 
                 </ul>
               </div>
