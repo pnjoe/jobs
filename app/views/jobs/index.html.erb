@@ -1,62 +1,92 @@
 
 <h2 class="text-center">职缺列表</h2>
-<br>
-  <% if current_user %>
+
+  <!-- <#% if current_user %>
     <div class="pull-right">
-      <% if current_user && current_user.admin? %>
+      <#% if current_user && current_user.admin? %>
         <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
-      <% end %>
+      <#% end %>
     </div>
-  <% end %>
-  <div class="dropdown clearfix pull-right">
+  <#% end %> -->
+  <!-- <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序<span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
       <li>
-        <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+        <#%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound_DESC")) %>
       </li>
       <li>
-          <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+        <#%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound_DESC")) %>
       </li>
       <li>
-        <%= link_to("按照发表时间排序", jobs_path ) %>
+        <#%= link_to("按照发表时间排序", jobs_path ) %>
       </li>
     </ul>
-  </div>
-  <div>
-<br>
+  </div> -->
 
-<br>
-
-<table class="table table-boldered">
-  <thead>
+<table class="table table-bordered table-striped custab text-center" >
+  <thead >
     <tr>
-      <th>职缺</th>
-      <th>薪资下限</th>
-      <th>薪资上限</th>
-      <th>刊登时间</th>
+
       <% if current_user && current_user.admin? %>
-        <th></th>
+        <th class="text-center" width = 10% >管理选项</th>
+        <th class="text-center" >职缺
+          <%= link_to("add a job",new_job_path, :class => "btn btn-primary btn-xs" )%>
+        </th>
+      <% else %>
+        <th class="text-center" >职缺</th>
       <% end %>
+
+      <th class="text-center" width = 13% >薪资下限
+        <%= link_to("↓", jobs_path(:order => "by_lower_bound_DESC")) %>
+        <%= link_to("↑", jobs_path(:order => "by_lower_bound_ASC")) %>
+      </th>
+
+      <th class="text-center" width = 13% >薪资上限
+        <%= link_to("↓", jobs_path(:order => "by_upper_bound_DESC")) %>
+        <%= link_to("↑", jobs_path(:order => "by_upper_bound_ASC")) %>
+      </th>
+
+      <th class="text-center" width = 18% >刊登时间
+        <%= link_to("↓", jobs_path(:order => "by_created_DESC")) %>
+        <%= link_to("↑", jobs_path(:order => "by_created_ASC")) %>
+      </th>
+
     </tr>
   </thead>
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to(job.title, job_path(job)) %></td>
-        <td><%= job.wage_lower_bound %> 元 </td>
-        <td><%= job.wage_upper_bound %> 元 </td>
-        <td><%= job.created_at %></td>
         <% if current_user && current_user.admin? %>
-          <td>
-            <%= link_to("Edit", edit_job_path(job)) %> |
-            <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <!-- <td>
+            <#%= link_to("Edit", edit_job_path(job)) %> |
+            <#%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          </td> -->
+          <td >
+              <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %>
+                <i class="fa fa-pencil" title=" Edit | 编辑这份职缺 "></i>
+              <% end %>
+              <%= link_to job_path(job),:method => :delete, :data => { :confirm => "Are you sure?" }, class: "btn btn-xs btn-danger" do %>
+                <i class="fa fa-trash-o" title=" Del | 删除这份职缺 "></i>
+              <% end %>
+              <% if job.is_hidden %>
+                <%= link_to publish_admin_job_path(job), method: :post, class: "btn btn-xs btn-success" do %>
+                  <i class="fa fa-eye" title=" Publish | 公开显示这份职缺 "></i>
+                <% end %>
+              <% else %>
+                <%= link_to hide_admin_job_path(job), method: :post, class: "btn btn-xs btn-warning" do %>
+                  <i class="fa fa-eye-slash" title=" Hide | 隐藏这份职缺 "></i>
+                <% end %>
+              <% end %>
           </td>
         <% end %>
+        <td class="text-left"><%= link_to(job.title, job_path(job)) %></td>
+        <td><%= job.wage_lower_bound %> 元 </td>
+        <td><%= job.wage_upper_bound %> 元 </td>
+        <td><%= job.created_at.strftime("%Y-%m-%d %H:%M") %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>

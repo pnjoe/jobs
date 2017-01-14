@@ -11,7 +11,7 @@
             <th class = "text-center" width = 12% >收到履历数量</th>
             <th class = "text-center" width = 12% >薪资下限</th>
             <th class = "text-center" width = 12% >薪资上限</th>
-            <th class = "text-center" width = 25% >刊登时间</th>
+            <th class = "text-center" width = 20% >刊登时间</th>
         </tr>
     </thead>
 
@@ -24,7 +24,7 @@
             <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %>
               <i class="fa fa-pencil" title=" Edit | 编辑这份职缺 "></i>
             <% end %>
-            <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-danger" do %>
+            <%= link_to job_path(job),:method => :delete, :data => { :confirm => "Are you sure?" }, class: "btn btn-xs btn-danger" do %>
               <i class="fa fa-trash-o" title=" Del | 删除这份职缺 "></i>
             <% end %>
             <% if job.is_hidden %>
@@ -46,7 +46,7 @@
         <td> <%= job.wage_upper_bound %> 元 </td>
 
         <td>
-            <%= job.created_at %>
+            <%= job.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
         </td>
     </tr>
     <% end %>
