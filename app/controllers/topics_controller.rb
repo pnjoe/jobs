@@ -23,31 +23,25 @@ class TopicsController < ApplicationController
 
   # POST /topics
   # POST /topics.json
+
   def create
     @topic = Topic.new(topic_params)
-
-    respond_to do |format|
-      if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
-      else
-        format.html { render :new }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    if @topic.save
+      redirect_to topics_path, notice: "您已成功留言，感谢您的反馈！"
+    else
+      render :new
     end
   end
+
 
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    respond_to do |format|
-      if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @topic }
-      else
-        format.html { render :edit }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    @topic = Topic.find(params[:id])
+    if @topic.update(topic_params)
+      redirect_to topics_path, notice: '留言修改成功'
+    else
+      render :edit
     end
   end
 

@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8 col-md-offset-2">
+  <h3 >     听这位同学说： </h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
+  <blockquote>
+    <p>
+      <h4 class="text-center"><%= @topic.title %></h4>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+      <br>
+      <%= simple_format(@topic.description) %>
+    </p>
+    <footer class="text-right">
+      <%= @topic.created_at %>
+    </footer>
+  </blockquote>
+
+<br>
+<%= link_to '<< Back', topics_path %>
+</div>

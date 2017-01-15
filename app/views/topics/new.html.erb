@@ -1,5 +1,7 @@
-<h1>New Topic</h1>
 
-<%= render 'form', topic: @topic %>
-
-<%= link_to 'Back', topics_path %>
+<div class="col-md-8 col-md-offset-2">
+  <h1 class="text-center"> 新增留言 </h1>
+  <%= render "form" %>
+  <br>
+  <%= link_to '看看别人的留言 >>', topics_path , class: "pull-right"%>
+</div>
