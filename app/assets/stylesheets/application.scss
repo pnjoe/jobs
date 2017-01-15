@@ -35,7 +35,7 @@
    background-image:url('http://img.hb.aicdn.com/d86c38413f2db046cad93e6e7fc842279c9ad60e1a7e4-1tM7GS');
    background-repeat: no-repeat;
    background-size: auto;
-   padding-top: 100px;
+   padding-top: 200px;
    height: 549px;
  }
 
@@ -43,7 +43,7 @@
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    text-align: center;
    margin-top: 0px;
-   margin-bottom: 80px;
+   margin-bottom: 0px;
  }
 
  .slogan {
@@ -53,6 +53,15 @@
    color: white;
    top: 12px;
  }
+
+ .po {
+   //margin-top: 0px;
+   //width: 100%;
+   //height: 100%;
+   //overflow: auto;
+   background: rgba(0,0,0,0.5);
+ }
+
 
  .lead {
    margin-bottom: 60px;
@@ -70,5 +79,5 @@
 .thumbnail {
     border: 0 none;
     box-shadow: none;
-    margin-top: 60px;
+    margin-top: 50px;
 }
