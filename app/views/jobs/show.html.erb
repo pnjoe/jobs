@@ -1,14 +1,15 @@
-<h2> <%= @job.title %> </h2>
-
-<p>
-  岗位要求：<%= simple_format(@job.description) %>
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center"> <%= @job.title %> </h2>
+  <p>
+    <h4>岗位要求：</h4><%= simple_format(@job.description) %>
+    <br>
+    <b style="font-size: 16px">每月薪资:  </b> <%= @job.wage_lower_bound %> ～ <%= @job.wage_upper_bound %> 元
+    <br>
+    <b style="font-size: 16px">联系方式:  </b> <%= @job.contact_email %>
+  </p>
   <br>
-  薪资 <%= @job.wage_lower_bound %> ～ <%= @job.wage_upper_bound %>
-  <br>
-  联系方式 <%= @job.contact_email %>
-</p>
-<br>
-<div class="text-center">
-  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+  <div class="text-center">
+    <%= link_to("投交履历", new_job_resume_path(@job), :class => "btn btn-info ") %>
+  </div>
+  <a><%= link_to("返回首页",root_path)%></a>
 </div>
-<a><%= link_to("返回首页",root_path)%></a>
