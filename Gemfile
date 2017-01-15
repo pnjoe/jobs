@@ -34,9 +34,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
-gem 'will_paginate'
+gem 'will_paginate'            #这个是分页功能用到的gem
 gem 'carrierwave'
-
+gem 'ransack'                  #此两个gem,是做搜索栏用到的
+gem 'seo_helper', '~> 1.0'     #
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
