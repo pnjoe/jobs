@@ -18,6 +18,11 @@
  @import "bootstrap";
  @import "font-awesome";
 
+.fudong{float:left;margin:5px;}
+.zidingyi{margin-bottom:50px}
+ footer{background-color: #eeeeee;}
+
+
  .navbar-default {
      background-color: #212121;//背景颜色
      border-color: #212121;//边框色
@@ -117,6 +122,18 @@
     width: 200px;//这里用指定宽度把btn拉得更长
 }
 
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
 
  .jumbotron {
    background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');

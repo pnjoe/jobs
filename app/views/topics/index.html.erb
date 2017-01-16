@@ -1,4 +1,4 @@
-
+<div class="col-md-8 col-md-offset-2">
 <h1 class="text-center">留言板</h1>
 <div>
   亲爱的同学们，助教，以及路人。既然来了。留个言反馈一下吧。不胜感激。
@@ -7,7 +7,7 @@
   <%= link_to '新增一条', new_topic_path,:class => "btn btn-success pull-right" %>
 
 
-<table class="table">
+<table class="table table-boldered table-striped" >
   <thead>
     <tr>
       <th>标题</th>
@@ -22,11 +22,13 @@
       <tr>
         <td><%= link_to(topic.title, topic_path(topic)) %></td>
         <td><%= topic.description %></td>
-        <td><%= topic.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= local_time(topic.created_at, '%Y-%m-%d %H:%M') %></td>
         <td><%= link_to '改一下', edit_topic_path(topic) %></td>
       </tr>
     <% end %>
   </tbody>
+  <footer>
+  </footer>
 </table>
 
-<br>
+</div>
