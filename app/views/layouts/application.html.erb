@@ -6,18 +6,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
   <body>
     <div class="row" >
       <div class="col-md-12" >
-        <div class="container">
-          <%= render "common/navbar" %>
+        <div class="container-fluid">
+          <div class="row">
+            <%= render "common/navbar" %>
+          </div>
           <%= render "common/flashes"%>
           <%= yield %>
         </div>
       </div>
     </div>
       <%= render "common/footer" %>
+      <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.thinkpage.cn/widget/chameleon.js"))</script>
+      <script>tpwidget("init", {
+          "flavor": "bubble",
+          "location": "WX4FBXXFKE4F",
+          "geolocation": "enabled",
+          "position": "top-left",
+          "margin": "100px 50px",
+          "language": "auto",
+          "unit": "c",
+          "theme": "chameleon",
+          "uid": "UE7048622C",
+          "hash": "3403105760a58affe49afc940dba78de"
+      });
+      tpwidget("show");</script>
   </body>
 </html>

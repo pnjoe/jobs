@@ -14,9 +14,9 @@
             <th class = "text-center" width = 20% >刊登时间</th>
         </tr>
     </thead>
-
+    <tbody>
     <% @jobs.each do |job| %>
-    <tr>
+      <tr>
         <td >
           <!-- <%= link_to("Edit", edit_admin_job_path(job), :class =>"btn btn-xs btn-info") %>
           <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" },
@@ -36,20 +36,21 @@
                 <i class="fa fa-eye-slash" title=" Hide | 隐藏这份职缺 "></i>
               <% end %>
             <% end %>
-        </td>
-        <td class = "text-left">
+         </td>
+         <td class = "text-left">
             <%= render_job_status(job) %>
             <%= link_to(job.title, admin_job_path(job)) %>
-        </td>
-        <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
-        <td> <%= job.wage_lower_bound %> 元 </td>
-        <td> <%= job.wage_upper_bound %> 元 </td>
+         </td>
+         <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+         <td> <%= job.wage_lower_bound %> 元 </td>
+         <td> <%= job.wage_upper_bound %> 元 </td>
 
-        <td>
+         <td>
             <%= job.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
-        </td>
-    </tr>
+         </td>
+      </tr>
     <% end %>
+  </tbody>
 </table>
 
 <a><%= link_to("<< 返回前台（职缺列表）",jobs_path)%></a>
