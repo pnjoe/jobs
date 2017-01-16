@@ -18,15 +18,30 @@
                     <li><%= link_to("注册", new_user_registration_path )%></li>
                   <% else %>
                     <li class="dropdown">
-                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">您好！<%= current_user.name %><b class="caret"></b></a>
+                      <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <% if current_user.name == "" %>
+                            您好！<%= current_user.email %>
+                          <% else %>
+                            您好！<%= current_user.name %>
+                          <% end %>
+                          <i class="fa fa-user-o" aria-hidden="true"></i>
+                          <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                           <% if current_user.admin? %>
-                           <li class="text-center"><i class="fa fa-user" aria-hidden="true"><%= link_to("管理员后台", admin_jobs_path, class: "text-center") %></i> </li>
+                           <li class="text-center"><i class="fa fa-user" aria-hidden="true">
+                             <%= link_to("管理员后台", admin_jobs_path, class: "text-center") %></i>
+                           </li>
                            <li class="divider"> </li>
                           <% end %>
-                          <li class="text-center"><i class="fa fa-address-card-o" aria-hidden="true"><%= link_to("修改用户信息", edit_user_registration_path )%></i></li>
+                          <li class="text-center"><i class="fa fa-address-card-o" aria-hidden="true">
+                            <%= link_to("修改用户信息", edit_user_registration_path )%></i>
+                          </li>
                           <li class="divider"> </li>
-                          <li class="text-center"><i class="fa fa-sign-out" aria-hidden="true"><%= link_to("登出", destroy_user_session_path, class: "text-center", method: :delete) %> </i></li>
+                          <li class="text-center"><i class="fa fa-sign-out" aria-hidden="true">
+                            <%= link_to("登出", destroy_user_session_path, class: "text-center", method: :delete) %> </i>
+                          </li>
                         </ul>
                       </li>
                     </li>

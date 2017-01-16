@@ -1,8 +1,11 @@
 <div class="col-md-6 col-md-offset-3">
-<h2>修改用户信息 <%= resource_name.to_s.humanize %></h2>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <h2>修改用户信息
+    <!-- <#%= resource_name.to_s.humanize %> -->
+  </h2>
+
+  <br>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -19,15 +22,15 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "提交更改" %>
+    <%= f.button :submit, "提交更改", :class => "btn btn-danger" %>
   </div>
 <% end %>
 <br>
 <br>
 
-<h3>注销此账号</h3>
+<h3>删除此账号</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= link_to "删除此账号[谨慎操作，不可恢复]", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+
 </div>
