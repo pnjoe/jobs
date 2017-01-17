@@ -9,16 +9,24 @@
 
 puts "自动生成种子资料"
 
-u = User.create([email:"guangdongjoe@gmail.com", password:"123456", password_confirmation:"123456",is_admin:"true"])
+#u = User.create([email:"guangdongjoe@gmail.com", password:"123456", password_confirmation:"123456",is_admin:"true"])
+u = User.first
 
 j = for i in 1..10 do
-Job.create([title:"job no.#{i}", description:"这是seed建立的第#{i}个职作", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"false"])
+Job.create([title:"job no.#{i}", description:"这是seed建立的第#{i}个职作", city:"北京", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"false"])
 end
 
+j = for i in 1..10 do
+Job.create([title:"job no.#{i}", description:"这是seed建立的第#{i}个职作", city:"上海", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"false"])
+end
+
+j = for i in 1..10 do
+Job.create([title:"job no.#{i}", description:"这是seed建立的第#{i}个职作", city:"广州", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"false"])
+end
 puts "10个公开职缺已生成完毕"
 
 j = for i in 1..10 do
-Job.create([title:"job no.#{i+10}", description:"这是seed建立的第#{i+10}个职位", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"true"])
+Job.create([title:"job no.#{i+10}", description:"这是seed建立的第#{i+10}个职位",city:"深圳", wage_upper_bound: rand(50..90)*100, wage_lower_bound: rand(10..49)*100, contact_email:"#{i}#{'@'}21.cn", is_hidden:"true"])
 end
 
 puts "10个隐藏职缺已生成完毕"

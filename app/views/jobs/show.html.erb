@@ -1,7 +1,10 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2 kuang" >
+
   <h2 class="text-center"> <%= @job.title %> </h2>
   <p>
     <h4>岗位要求：</h4><%= simple_format(@job.description) %>
+    <br>
+    <b style="font-size: 16px">工作城市:  </b> <%= @job.city %>
     <br>
     <b style="font-size: 16px">每月薪资:  </b> <%= @job.wage_lower_bound %> ～ <%= @job.wage_upper_bound %> 元
     <br>
@@ -9,7 +12,9 @@
   </p>
   <br>
   <div class="text-center">
-    <%= link_to("投交履历", new_job_resume_path(@job), :class => "btn btn-info ") %>
+    <%= link_to("投交履历", new_job_resume_path(@job), :class => "btn btn-danger btn-lg") %>
   </div>
-  <a><%= link_to("返回首页",root_path)%></a>
+  <a><%= link_to("<< 返回职缺列表 ",jobs_path)%></a>
+
+
 </div>

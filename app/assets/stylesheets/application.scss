@@ -18,15 +18,25 @@
  @import "bootstrap";
  @import "font-awesome";
 
-.fudong{float:left;margin:5px;}
+.fudong{float:left;margin:15px;}
 .zidingyi{margin-bottom:50px}
 .zhuce{background:url(http://img.hb.aicdn.com/504ba6b727523247a15112b10debf47fe66a4b7a93459-K8szfu);
      background-repeat: no-repeat;
      height:800px;
-
      background-size: cover;
  }
-
+ .kuang{
+   margin-top: 100px;
+   margin-bottom: 150px;
+   padding: 50px 55px 60px;
+   //padding-bottom:50px;
+   border:1px dashed #ef6c00;  //dashed虚线  solid实线
+   //border-color:#EF6C00;
+ }
+.zuobian{
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
 
  footer{background-color: #eeeeee;}
 

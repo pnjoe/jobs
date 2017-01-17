@@ -25,13 +25,13 @@
       </li>
     </ul>
   </div> -->
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1 zuobian">
 
       <h2 class="text-center">职缺列表</h2>
       <br>
       <%= render :partial => "jobs/search_bar" %>
       <div class="col-sm-3 col-lg-2">
-        <%= link_to '发布一份工作' , new_job_path , :remote => true, :class => "btn btn-primary btn-block" %>
+        <%= link_to '发布一份工作' , new_job_path ,  :class => "btn btn-danger btn-block" %>
       </div>
       <!-- <div class="pull-right">
         <#%= link_to("  发布招聘信息  ",new_job_path, :class => "btn btn-primary " )%>
@@ -46,7 +46,7 @@
           <% else %>
             <th class="text-center" >职缺</th>
           <% end %>
-
+          <th class="text-center" width = 13% >工作城市</th>
           <th class="text-center" width = 13% >薪资下限
             <%= link_to("↓", jobs_path(:order => "by_lower_bound_DESC")) %>
             <%= link_to("↑", jobs_path(:order => "by_lower_bound_ASC")) %>
@@ -91,6 +91,7 @@
               </td>
             <% end %>
             <td class="text-left"><%= link_to(job.title, job_path(job)) %></td>
+            <td><%= job.city %></td>
             <td><%= job.wage_lower_bound %> 元 </td>
             <td><%= job.wage_upper_bound %> 元 </td>
             <td><%= job.created_at.strftime("%Y-%m-%d %H:%M") %></td>

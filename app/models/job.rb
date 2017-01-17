@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   has_many :resumes
-  validates :title, :wage_lower_bound, :wage_upper_bound, presence: true
+  validates :title,:city, :wage_lower_bound, :wage_upper_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0 }
   validates :contact_email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "%{value} 不是有效的email地址,请检查!"}
   #上一行代码是抄forrest-党明同学的，format里没看懂是怎么实现的。
