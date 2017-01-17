@@ -19,10 +19,12 @@
  @import "font-awesome";
 
 .fudong{float:left;margin:15px;}
-.zidingyi{margin-bottom:50px}
+.zidingyi{margin-bottom:-50px}
+//http://img.zcool.cn/community/033647a554c73e100000158fc02103b.jpg
+//http://img.hb.aicdn.com/504ba6b727523247a15112b10debf47fe66a4b7a93459-K8szfu
 .zhuce{background:url(http://img.hb.aicdn.com/504ba6b727523247a15112b10debf47fe66a4b7a93459-K8szfu);
      background-repeat: no-repeat;
-     height:800px;
+     height:850px;
      background-size: cover;
  }
  .kuang{
@@ -34,7 +36,7 @@
    //border-color:#EF6C00;
  }
 .zuobian{
-  margin-top: 100px;
+  margin-top: 160px;
   margin-bottom: 150px;
 }
 
@@ -42,9 +44,11 @@
 
 
  .navbar-default {
-     background-color: #212121;//背景颜色
-     border-color: #212121;//边框色
+     //background-color: #212121;//背景颜色
+     //border-color: #212121;//边框色
+     border: 0;
      margin-bottom: 0;//底部 margin 不撑开距离
+     background-color: rgba(33, 33, 33, 0.95);
  }
 
  @media (min-width: 768px) {
@@ -97,7 +101,8 @@
 .title {
   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
   max-width: 500px;//最大宽度
-  margin-top: 200px;//和顶部拉开距离
+  margin-top: 300px;//和顶部拉开距离
+  margin-left: 180px;
   margin-bottom: 0;//这样就可以紧接息面的描述文字
   border-top-right-radius: 3px;//右上角圆边
   border-top-left-radius: 3px;//左上角圆边
@@ -110,7 +115,8 @@
 }
 
 .jumbotron p {
-    margin: 0;//上下左右margin为0
+
+    margin: 0px 180px;//上下左右margin为0
     font-size: 26px;//字体大小
     max-width: 500px;//最大宽度
     background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
@@ -154,10 +160,12 @@
 }
 
  .jumbotron {
-   background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
+   background-image:url('http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/9MxjVh7U*WOyHCD.qQXGE.GPLG2*MZLe9md0SbHKJ7o!/r/dN8AAAAAAAAA');
    background-repeat: no-repeat;
    background-size: cover;
+   margin-top: -200px;
    padding-bottom: 110px;
+   height: 880px;
  }
 
  // .title {
