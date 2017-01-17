@@ -25,14 +25,18 @@
       </li>
     </ul>
   </div> -->
-<div class="col-md-10 col-md-offset-1 zuobian">
+  <div class="row yeshou" >
+  </div>
+<div class="col-md-10 col-md-offset-1 dingbu">
 
       <h2 class="text-center">职缺列表</h2>
       <br>
       <%= render :partial => "jobs/search_bar" %>
+      <% if current_user && current_user.admin? %>
       <div class="col-sm-3 col-lg-2">
         <%= link_to '发布一份工作' , new_job_path ,  :class => "btn btn-danger btn-block" %>
       </div>
+      <% end %>
       <!-- <div class="pull-right">
         <#%= link_to("  发布招聘信息  ",new_job_path, :class => "btn btn-primary " )%>
       </div> -->
@@ -102,4 +106,7 @@
         <tr><tr>
       </footer>
     </table>
+    <div class="text-center" style="margin-top: -50px;" >
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+    </div>
 </div>

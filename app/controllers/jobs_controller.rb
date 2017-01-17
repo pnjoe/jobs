@@ -19,6 +19,8 @@ class JobsController < ApplicationController
     else
       Job.published.recent
     end
+
+    @jobs = @jobs.recent.paginate(:page => params[:page], :per_page => 12)
   end
 
   def new
@@ -31,6 +33,7 @@ class JobsController < ApplicationController
       flash[:warning] = "This Job already archivevd"
       redirect_to root_path
     end
+
   end
 
   def edit
@@ -64,7 +67,7 @@ class JobsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.paginate(:page => params[:page], :per_page => 20 )
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 12 )
     end
   end
 

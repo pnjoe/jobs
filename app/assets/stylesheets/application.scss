@@ -22,26 +22,112 @@
 .zidingyi{margin-bottom:-50px}
 //http://img.zcool.cn/community/033647a554c73e100000158fc02103b.jpg
 //http://img.hb.aicdn.com/504ba6b727523247a15112b10debf47fe66a4b7a93459-K8szfu
-.zhuce{background:url(http://img.hb.aicdn.com/504ba6b727523247a15112b10debf47fe66a4b7a93459-K8szfu);
+.zhuce{background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/vP1drfejOcgxxW97Q7k5scmoDaS*Q6oKbfK3pKq1otw!/r/dN0AAAAAAAAA");
      background-repeat: no-repeat;
+     margin-top: 100px;
+     margin-bottom: -50px;
      height:850px;
      background-size: cover;
  }
+
+
+ .glnb{
+   margin-top: 50px;
+   margin-bottom: 50px;
+   padding: 50px 55px 60px;
+   //padding-bottom:50px;
+   border:1px solid #ef6c00;  //dashed虚线  solid实线
+   //border-color:#EF6C00;
+ }
+
  .kuang{
-   margin-top: 100px;
-   margin-bottom: 150px;
+   background-color: rgba(239, 100, 0, 0.05);
+   margin-top: 40px;
+   margin-bottom: 25px;
    padding: 50px 55px 60px;
    //padding-bottom:50px;
    border:1px dashed #ef6c00;  //dashed虚线  solid实线
    //border-color:#EF6C00;
  }
 .zuobian{
-  margin-top: 160px;
-  margin-bottom: 150px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
- footer{background-color: #eeeeee;}
+.liuyan{
+  padding: 50px 50px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+.dingbu{
+  margin-top: 30px;
+}
 
+ //footer{background-color: #eeeeee;}
+.yejiao{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/Eb0PIeb4xlorjaRffd2tO3HIymfwQawSczELRc9Cu0w!/r/dN0AAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 50px;
+  height:200px;
+}
+.xinzheng{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/rUuqUSHqdT4A3Mtj.KK3qlzxVciHKNqp2OFwle6ObEU!/r/dHgBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: -50px;
+  height:300px;
+}
+
+.xianshi{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/mVrDv1KQJbJ3oDAmaVQkhnrsgr5Lk7ztcVzd5oE*tB8!/r/dN4AAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: -50px;
+  height:300px;
+}
+
+.houtai{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/yqNqMCWa2uFBzj0WA9eoe7FIG0ZsoNI5lzr2NGoknTg!/r/dHkBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: 50px;
+  height:300px;
+}
+
+.yeshou{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/yZVjBqtw49YUqwOEIseLAvq3yQuvj7LtSWvmGRN.vjE!/r/dHkBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: 50px;
+  height:200px;
+}
+
+
+.liuyanye{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/V2kbHVr4GlTvBNcMgfJO14vKsJ7iQPefTn1ib2QLFck!/r/dHgBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: -50px;
+  height:350px;
+}
+
+.seo{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/ND4uzZW2nt4Zo1I8gTZsnjlSVgxmGKcZgF6LVcoYmsQ!/r/dHkBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: 50px;
+  height:300px;
+}
+
+
+.bianji{
+  background:url("http://r.photo.store.qq.com/psb?/V107RL4f3Dzich/fg2mnB0x3o.Rs3i0b79gczYGOd2asJX1rggPxiTgmJo!/r/dAkBAAAAAAAA");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //margin-top: -50px;
+  height:300px;
+}
 
  .navbar-default {
      //background-color: #212121;//背景颜色

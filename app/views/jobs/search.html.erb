@@ -1,15 +1,22 @@
+<div class="row seo" >
+</div>
+
+<div class="col-md-8 col-md-offset-2 zuobian">
+  <br>
 <div class="row">
   <%= render :partial => "jobs/search_bar" %>
 </div>
-
-  <b>为您搜索到以下信息：</b>
-
+<div style="margin:30px 30px 35px 0px;">
+  <br>
+  <h4>为您找到以下信息：</h4>
+</div>
 <div class="search-result">
   <table class="table table-borderd">
     <thead>
       <tr>
         <th>职位</th>
         <th>薪资</th>
+        <th>工作城市</th>
         <th>发布时间</th>
       </tr>
     </thead>
@@ -22,11 +29,17 @@
           <td>
             <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %> 元
           </td>
+          <td><%= job.city %></td>
           <td>
-            <%= job.created_at.strftime("%Y-%m-%d %H:%M") %>
+            <%= local_time(job.created_at, "%Y-%m-%d %H:%M") %>
           </td>
         </tr>
       <% end %>
     <tbody>
   </table>
+</div>
+  <div class="text-center" >
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
+
 </div>

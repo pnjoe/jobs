@@ -34,7 +34,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
-gem 'will_paginate'            #这个是分页功能用到的gem
+gem 'will_paginate-bootstrap'            #这个是分页功能用到的gem
 gem 'carrierwave'
 gem 'ransack'                  #此两个gem,是做搜索栏用到的
 gem 'seo_helper', '~> 1.0'     #

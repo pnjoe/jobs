@@ -1,4 +1,3 @@
-<div class="">
 <h2 class = "text-center" >管理员后台</h2>
 <div class="pull-right">
   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-danger" ) %>
@@ -10,6 +9,7 @@
             <th class = "text-center" width = 12% >管理选项</th>
             <th class = "text-center">职缺</th>
             <th class = "text-center" width = 12% >收到履历数量</th>
+            <th class = "text-center" width = 12% >工作城市</th>
             <th class = "text-center" width = 12% >薪资下限</th>
             <th class = "text-center" width = 12% >薪资上限</th>
             <th class = "text-center" width = 20% >刊登时间</th>
@@ -43,6 +43,7 @@
             <%= link_to(job.title, admin_job_path(job)) %>
          </td>
          <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+         <td> <%= job.city %> </td>
          <td> <%= job.wage_lower_bound %> 元 </td>
          <td> <%= job.wage_upper_bound %> 元 </td>
 
@@ -56,6 +57,6 @@
     <tr><tr>
   </footer>
 </table>
-
-<a><%= link_to("<< 返回前台（职缺列表）",jobs_path)%></a>
+<div class="text-center" style= "margin-top: -50px">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>
