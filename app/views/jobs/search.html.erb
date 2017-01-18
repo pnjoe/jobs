@@ -14,7 +14,6 @@
   <table class="table table-borderd">
     <thead>
       <tr>
-        <th><th>
         <th>职位</th>
         <th>薪资</th>
         <th>工作城市</th>
@@ -24,7 +23,6 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><td>
           <td>
             <%= link_to(render_highlight_content(job,@query_string),job_path(job)) %>
           </td>
