@@ -1,11 +1,12 @@
 <h2 class = "text-center" >管理员后台</h2>
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-danger" ) %>
+  <%= link_to("发布招聘信息", new_admin_job_path, :class => "btn btn-primary" ) %>
 </div>
 
 <table class="table table-boldered table-striped custab text-center" >
     <thead >
         <tr >
+            <th></th>
             <th class = "text-center" width = 12% >管理选项</th>
             <th class = "text-center">职缺</th>
             <th class = "text-center" width = 12% >收到履历数量</th>
@@ -18,6 +19,7 @@
     <tbody>
     <% @jobs.each do |job| %>
       <tr>
+        <td></td>
         <td >
           <!-- <%= link_to("Edit", edit_admin_job_path(job), :class =>"btn btn-xs btn-info") %>
           <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" },

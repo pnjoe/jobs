@@ -19,9 +19,15 @@
             </div>
             <div class="row zuobian">
               <div class="col-md-2">
+                <div style="height: 105px">
+                </div>
                 <ul class="nav nav-pills nav-stacked" role="tablist" style="max-width: 300px; padding-top:20px;">
                   <li class="active"><%= link_to("后台首页", admin_jobs_path ) %></li>
-                  <li style="background-color: #eeeeee"><%= link_to("新增职缺", new_admin_job_path ) %> </li>
+                  <li style="background-color: #eeeeee"><%= link_to("发布招聘信息", new_admin_job_path ) %> </li>
+
+                  <li class="active"><%= link_to("用户中心") %></li>
+                  <li style="background-color: #eeeeee"><%= link_to("修改昵称/邮箱", edit_user_registration_path ) %> </li>
+                  <li style="background-color: #eeeeee"><%= link_to("登出", destroy_user_session_path, method: :delete ) %> </li>
 
                 </ul>
               </div>

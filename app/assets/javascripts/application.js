@@ -17,3 +17,12 @@
 //= require bootstrap/dropdown
 //= require_tree .
 //= require local_time
+
+$(function(){
+        //$('table tr:not(:first)').remove();
+        var len = $('table tr').length;
+        for(var i = 1;i<len;i++){
+            $('table tr:eq('+i+') td:first').text(i);
+        }
+
+});

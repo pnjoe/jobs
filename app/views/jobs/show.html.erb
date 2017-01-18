@@ -12,10 +12,15 @@
     <br>
     <b style="font-size: 16px">联系方式:  </b> <%= @job.contact_email %>
   </p>
-  <br>
+  <footer class="text-right "><font size="3" color=#dddddd>
+    <%= @job.created_at.strftime("%Y-%m-%d %H:%M") %></font>
+  </footer>
   <div class="text-center">
+    <hr>
+    <br>
     <%= link_to("投交履历", new_job_resume_path(@job), :class => "btn btn-danger btn-lg") %>
   </div>
+  <br>
   <a><%= link_to("<< 返回职缺列表 ",jobs_path)%></a>
 
 
